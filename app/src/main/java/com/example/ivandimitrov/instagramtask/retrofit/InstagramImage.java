@@ -1,4 +1,4 @@
-package com.example.ivandimitrov.instagramtask;
+package com.example.ivandimitrov.instagramtask.retrofit;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
