@@ -3,13 +3,16 @@ package com.example.ivandimitrov.instagramtask;
 import android.app.Fragment;
 import android.graphics.Bitmap;
 
+import com.example.ivandimitrov.instagramtask.Tasks.DownloadImageTask;
+import com.example.ivandimitrov.instagramtask.adapters.MediaListAdapter;
+
 import java.util.HashMap;
 
 /**
  * Created by Ivan Dimitrov on 2/2/2017.
  */
 
-public class DataFragment extends Fragment implements CustomListAdapter.ImageDataChangeListener, DownloadImageTask.DownloadImageListener {
+public class DataFragment extends Fragment implements MediaListAdapter.ImageDataChangeListener, DownloadImageTask.DownloadImageListener {
     private HashMap<String, Bitmap> imageList = new HashMap<>();
     private DownloadImageTask.DownloadImageListener mListener;
 

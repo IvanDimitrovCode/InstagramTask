@@ -1,4 +1,4 @@
-package com.example.ivandimitrov.instagramtask.retrofit;
+package com.example.ivandimitrov.instagramtask.retrofit.user;
 
 /**
  * Created by Ivan Dimitrov on 1/30/2017.

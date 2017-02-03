@@ -1,4 +1,4 @@
-package com.example.ivandimitrov.instagramtask;
+package com.example.ivandimitrov.instagramtask.Tasks;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,19 +16,17 @@ public class DownloadImageTask extends AsyncTask<Bitmap, Bitmap, Bitmap> {
     private DownloadImageListener mListener;
     private String                mUrl;
 
-    DownloadImageTask(DownloadImageListener listener, String url) {
+    public DownloadImageTask(DownloadImageListener listener, String url) {
         this.mListener = listener;
         this.mUrl = url;
     }
 
     @Override
-    protected Bitmap doInBackground(Bitmap... params) {
+    public Bitmap doInBackground(Bitmap... params) {
         Bitmap map = null;
         try {
             URL url = new URL(mUrl);
             map = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -36,12 +34,12 @@ public class DownloadImageTask extends AsyncTask<Bitmap, Bitmap, Bitmap> {
     }
 
     @Override
-    protected void onPostExecute(Bitmap map) {
+    public void onPostExecute(Bitmap map) {
         super.onPostExecute(map);
         mListener.onImageDownloadFinished(mUrl, map);
     }
 
-    interface DownloadImageListener {
+    public interface DownloadImageListener {
         void onImageDownloadFinished(String image, Bitmap imageMap);
     }
 }

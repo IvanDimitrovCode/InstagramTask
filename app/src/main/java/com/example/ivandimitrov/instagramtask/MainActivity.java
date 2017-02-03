@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private final static String API_KEY = "4527845236.e5915a5.7b16f0ee10524e4b8a7e677e7044c3f4";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, UserImagesActivity.class);
+                Intent intent = new Intent(MainActivity.this, MediaListActivity.class);
                 startActivity(intent);
             }
         });

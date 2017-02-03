@@ -1,13 +1,13 @@
-package com.example.ivandimitrov.instagramtask.retrofit;
+package com.example.ivandimitrov.instagramtask.retrofit.media_info;
+
+/**
+ * Created by Ivan Dimitrov on 2/3/2017.
+ */
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by Ivan Dimitrov on 1/30/2017.
- */
-
-public class InstagramImage {
+public class VideosStandardResolution {
     @SerializedName("url")
     @Expose
     private String  url;
@@ -41,5 +41,4 @@ public class InstagramImage {
     public void setWidth(Integer width) {
         this.width = width;
     }
-
 }

@@ -1,4 +1,4 @@
-package com.example.ivandimitrov.instagramtask;
+package com.example.ivandimitrov.instagramtask.adapters;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -8,9 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
-import com.example.ivandimitrov.instagramtask.retrofit.Datum;
-import com.example.ivandimitrov.instagramtask.retrofit.Images;
-import com.example.ivandimitrov.instagramtask.retrofit.InstagramImage;
+import com.example.ivandimitrov.instagramtask.R;
+import com.example.ivandimitrov.instagramtask.retrofit.user.Datum;
+import com.example.ivandimitrov.instagramtask.retrofit.user.Images;
+import com.example.ivandimitrov.instagramtask.retrofit.user.InstagramImage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,22 +20,18 @@ import java.util.List;
  * Created by Ivan Dimitrov on 1/31/2017.
  */
 
-public class CustomListAdapter extends ArrayAdapter<Datum> {
+public class MediaListAdapter extends ArrayAdapter<Datum> {
     private final Activity mContext;
     private List<Datum> mImageList = new ArrayList<Datum>();
     private Images                  mImage;
     private InstagramImage          mNormalResolutionImage;
     private ImageDataChangeListener mListener;
 
-    CustomListAdapter(Activity context, List<Datum> itemName, ImageDataChangeListener listener) {
+    public MediaListAdapter(Activity context, List<Datum> itemName, ImageDataChangeListener listener) {
         super(context, R.layout.activity_user_images, itemName);
         this.mContext = context;
         this.mImageList = itemName;
         mListener = listener;
-    }
-
-    public CustomListAdapter getCurrentInstance() {
-        return this;
     }
 
     @Override
@@ -65,7 +62,7 @@ public class CustomListAdapter extends ArrayAdapter<Datum> {
         ImageView image;
     }
 
-    interface ImageDataChangeListener {
+    public interface ImageDataChangeListener {
         void onImageAdd(String key, Bitmap value);
 
         void onImageSet(String key, Bitmap value);

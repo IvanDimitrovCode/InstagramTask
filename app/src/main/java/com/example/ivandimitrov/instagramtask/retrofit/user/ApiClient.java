@@ -1,14 +1,14 @@
-package com.example.ivandimitrov.instagramtask.retrofit;
+package com.example.ivandimitrov.instagramtask.retrofit.user;
 
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+        import retrofit2.Retrofit;
+        import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by Ivan Dimitrov on 1/30/2017.
  */
 
 public class ApiClient {
-    public static final String   BASE_URL = "https://api.instagram.com/v1/users/self/";
+    public static final String   BASE_URL = "https://api.instagram.com/v1/";
     private static      Retrofit retrofit = null;
 
 
